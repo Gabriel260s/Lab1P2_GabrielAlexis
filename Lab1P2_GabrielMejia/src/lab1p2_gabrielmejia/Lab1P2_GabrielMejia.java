@@ -40,6 +40,7 @@ public class Lab1P2_GabrielMejia {
             for(int i = 0;i<arregloMediana.size();i++){
                 arregloMedianas[i] = arregloMediana.get(i);
             }
+            System.out.println("Solo ingrese numeros mayores a 4 e impares");
             
 
         }
@@ -108,7 +109,10 @@ public class Lab1P2_GabrielMejia {
         return mediana;
     }
 
-    public ArrayList ordenarMedianas(ArrayList mediana, int i) {
+    public ArrayList ordenarMedianas(int [] medianas, int i) {
+        if(medianas[i]>medianas[i+1]){
+            
+        }
       
     }
 
