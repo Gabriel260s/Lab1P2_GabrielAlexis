@@ -35,9 +35,13 @@ public class Lab1P2_GabrielMejia {
             arregloMediana = arregloMedianas(matriz);
             System.out.println(arregloMediana);
             int medianaMedianas = medianadeLasMediana(arregloMediana);
-            System.out.println("Mediana de las medianas: "+medianaMedianas);
+            System.out.println("Mediana de las medianas: " + medianaMedianas);
+            int[] arregloMedianas = new int[arregloMediana.size()];
+            for(int i = 0;i<arregloMediana.size();i++){
+                arregloMedianas[i] = arregloMediana.get(i);
+            }
+            
 
-           
         }
 
     }
@@ -79,7 +83,7 @@ public class Lab1P2_GabrielMejia {
     }
     //[][][][][][][] 
 
-    public static ArrayList arregloMedianas(int[][] matriz) {
+    public static ArrayList<Integer> arregloMedianas(int[][] matriz) {
 
         ArrayList<Integer> arregloMediana = new ArrayList<>();
         for (int i = 0; i < matriz.length; i++) {
@@ -97,11 +101,15 @@ public class Lab1P2_GabrielMejia {
         int mediana = 0;
         for (int i = 0; i < fila.size(); i++) {
             if (i == fila.size() / 2) {
-                mediana = (int)fila.get(i);
+                mediana = (int) fila.get(i);
 
             }
         }
         return mediana;
+    }
+
+    public ArrayList ordenarMedianas(ArrayList mediana, int i) {
+      
     }
 
 }
