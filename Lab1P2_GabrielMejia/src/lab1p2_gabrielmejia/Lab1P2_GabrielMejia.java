@@ -22,6 +22,7 @@ public class Lab1P2_GabrielMejia {
 
         System.out.println("Ingrese el tamaño de la matriz: ");
         tamagno = input.nextInt();
+
         if (tamagno > 4 && tamagno % 2 != 0) {
             int[][] matriz = new int[tamagno][tamagno];
             int[][] matrizOrdenada = new int[tamagno][tamagno];
@@ -34,13 +35,19 @@ public class Lab1P2_GabrielMejia {
             ArrayList<Integer> arregloMediana = new ArrayList<>();
             arregloMediana = arregloMedianas(matriz);
             System.out.println(arregloMediana);
+
             int medianaMedianas = medianadeLasMediana(arregloMediana);
             System.out.println("Mediana de las medianas: " + medianaMedianas);
             int[] arregloMedianas = new int[arregloMediana.size()];
             for (int i = 0; i < arregloMediana.size(); i++) {
                 arregloMedianas[i] = arregloMediana.get(i);
             }
-            System.out.println("Solo ingrese numeros mayores a 4 e impares");
+            int[] arreglordenada = new int[arregloMedianas.length];
+            arreglordenada = ordenarMedianas(arregloMedianas, 1);
+            imprimirArreglo(arreglordenada);
+
+        } else {
+            System.out.println("Ingrese solo numeros mayores  a 4 e impares");
 
         }
 
@@ -108,17 +115,22 @@ public class Lab1P2_GabrielMejia {
         return mediana;
     }
 
-    public ArrayList ordenarMedianas(int[] fila, int i) {
-        int[] medianaOrdenada = new int[fila.length];
-        int aux;
-        int menor;
-        if (fila[i] > fila[i + 1]) {
-            menor = fila[i];
-            aux = fila[i + 1];
-            medianaOrdenada[i] = menor;
-            return ordenarMedianas(fila, i+1);
-
+    public static void imprimirArreglo(int[] arreglo) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.println("[" + arreglo[i] + "]");
         }
+    }
+
+    public static int[] ordenarMedianas(int[] fila, int i) {
+        int aux;
+        int[] medianaOrdenada = new int[fila.length];
+        for(int j = 0;j<medianaOrdenada.length;j++){
+            if(fila[i]>fila[i+1]){
+                aux=fila[i];
+                
+            }
+        }
+       
 
     }
 
