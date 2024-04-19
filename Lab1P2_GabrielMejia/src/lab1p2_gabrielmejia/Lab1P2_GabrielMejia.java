@@ -44,6 +44,7 @@ public class Lab1P2_GabrielMejia {
             }
             int[] arreglordenada = new int[arregloMedianas.length];
             arreglordenada = ordenarMedianas(arregloMedianas, 1);
+            System.out.println("Mediana ordenada: ");
             imprimirArreglo(arreglordenada);
 
         } else {
@@ -117,20 +118,27 @@ public class Lab1P2_GabrielMejia {
 
     public static void imprimirArreglo(int[] arreglo) {
         for (int i = 0; i < arreglo.length; i++) {
-            System.out.println("[" + arreglo[i] + "]");
+            System.out.print("[" + arreglo[i] + "]");
         }
     }
 
     public static int[] ordenarMedianas(int[] fila, int i) {
         int aux;
+        int menor;
         int[] medianaOrdenada = new int[fila.length];
-        for(int j = 0;j<medianaOrdenada.length;j++){
-            if(fila[i]>fila[i+1]){
-                aux=fila[i];
-                
+        for (int j = 0; j < medianaOrdenada.length; j++) {
+            if (fila[i] > fila[i + 1]) {
+                menor = fila[i];
+                aux = fila[i + 1];
+                medianaOrdenada[i] = menor;
+                return ordenarMedianas(medianaOrdenada, i+1);
+
+            }else{
+               
             }
         }
-       
+        return medianaOrdenada;
+        
 
     }
 
