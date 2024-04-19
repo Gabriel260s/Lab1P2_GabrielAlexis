@@ -37,11 +37,10 @@ public class Lab1P2_GabrielMejia {
             int medianaMedianas = medianadeLasMediana(arregloMediana);
             System.out.println("Mediana de las medianas: " + medianaMedianas);
             int[] arregloMedianas = new int[arregloMediana.size()];
-            for(int i = 0;i<arregloMediana.size();i++){
+            for (int i = 0; i < arregloMediana.size(); i++) {
                 arregloMedianas[i] = arregloMediana.get(i);
             }
             System.out.println("Solo ingrese numeros mayores a 4 e impares");
-            
 
         }
 
@@ -109,11 +108,18 @@ public class Lab1P2_GabrielMejia {
         return mediana;
     }
 
-    public ArrayList ordenarMedianas(int [] medianas, int i) {
-        if(medianas[i]>medianas[i+1]){
-            
+    public ArrayList ordenarMedianas(int[] fila, int i) {
+        int[] medianaOrdenada = new int[fila.length];
+        int aux;
+        int menor;
+        if (fila[i] > fila[i + 1]) {
+            menor = fila[i];
+            aux = fila[i + 1];
+            medianaOrdenada[i] = menor;
+            return ordenarMedianas(fila, i+1);
+
         }
-      
+
     }
 
 }
