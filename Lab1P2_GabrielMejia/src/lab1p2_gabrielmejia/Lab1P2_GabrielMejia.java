@@ -19,10 +19,10 @@ public class Lab1P2_GabrielMejia {
      */
     public static void main(String[] args) {
         int tamagno = 0;
-        do {
-            
-            System.out.println("Ingrese el tamaño de la matriz: ");
-            tamagno = input.nextInt();
+
+        System.out.println("Ingrese el tamaño de la matriz: ");
+        tamagno = input.nextInt();
+        if (tamagno > 4 && tamagno % 2 != 0) {
             int[][] matriz = new int[tamagno][tamagno];
             int[][] matrizOrdenada = new int[tamagno][tamagno];
             matriz = llenarMatriz(matriz);
@@ -32,11 +32,14 @@ public class Lab1P2_GabrielMejia {
             imprimirMatriz(matrizOrdenada);
             System.out.println("Arreglo medianas:");
             ArrayList<Integer> arregloMediana = new ArrayList<>();
-            arregloMediana= arregloMedianas(matriz);
+            arregloMediana = arregloMedianas(matriz);
             System.out.println(arregloMediana);
-            
+            int medianaMedianas = medianadeLasMediana(arregloMediana);
+            System.out.println("Mediana de las medianas: "+medianaMedianas);
 
-        } while (tamagno > 4 && tamagno % 2 != 0);
+           
+        }
+
     }
 
     public static int[][] llenarMatriz(int[][] matriz) {
@@ -57,9 +60,10 @@ public class Lab1P2_GabrielMejia {
         }
     }
 
-    public static int[] BubbleSortRecursiva(int[] fila, int i) {
+    public static int[] BubbleSortRecursiva(int[][] matriz, int i) {
         int aux;
         int menor;
+        int fila[] = new int[matriz.length];
         int[] filaOrdenada = new int[fila.length];
         for (int k = 0; k < fila.length; k++) {
             for (int j = 0; j < fila.length; j++) {
@@ -76,25 +80,24 @@ public class Lab1P2_GabrielMejia {
     //[][][][][][][] 
 
     public static ArrayList arregloMedianas(int[][] matriz) {
-        ArrayList<Integer> arregloMediana = new ArrayList<>();
-        arregloMediana.add(7);
-        
-        
 
-        for (int i = 0; i < arregloMediana.size(); i++) {
-            for (int j = 0; j < arregloMediana.size(); j++) {
-                if(j==matriz.length)
-               
+        ArrayList<Integer> arregloMediana = new ArrayList<>();
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (j == matriz[0].length / 2) {
+                    arregloMediana.add(matriz[i][j]);
+                }
             }
         }
+
         return arregloMediana;
     }
 
-    public static int medianadeLasMediana(int[] fila) {
+    public static int medianadeLasMediana(ArrayList fila) {
         int mediana = 0;
-        for (int i = 0; i < fila.length; i++) {
-            if (i == fila.length / 2) {
-                mediana = i;
+        for (int i = 0; i < fila.size(); i++) {
+            if (i == fila.size() / 2) {
+                mediana = (int)fila.get(i);
 
             }
         }
