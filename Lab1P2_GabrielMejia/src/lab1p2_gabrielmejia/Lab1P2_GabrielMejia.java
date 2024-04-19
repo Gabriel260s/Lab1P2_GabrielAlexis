@@ -38,14 +38,11 @@ public class Lab1P2_GabrielMejia {
 
             int medianaMedianas = medianadeLasMediana(arregloMediana);
             System.out.println("Mediana de las medianas: " + medianaMedianas);
-            int[] arregloMedianas = new int[arregloMediana.size()];
-            for (int i = 0; i < arregloMediana.size(); i++) {
-                arregloMedianas[i] = arregloMediana.get(i);
-            }
-            int[] arreglordenada = new int[arregloMedianas.length];
-            arreglordenada = ordenarMedianas(arregloMedianas, 1);
+
+            ArrayList<Integer> arrayOrdenada = new ArrayList<>();
+            ordenarMedianas(arrayOrdenada, arrayOrdenada.size());
             System.out.println("Mediana ordenada: ");
-            imprimirArreglo(arreglordenada);
+            System.out.println(arrayOrdenada);
 
         } else {
             System.out.println("Ingrese solo numeros mayores  a 4 e impares");
@@ -89,7 +86,7 @@ public class Lab1P2_GabrielMejia {
         }
         return filaOrdenada;
     }
-    //[][][][][][][] 
+   
 
     public static ArrayList<Integer> arregloMedianas(int[][] matriz) {
 
@@ -122,24 +119,8 @@ public class Lab1P2_GabrielMejia {
         }
     }
 
-    public static int[] ordenarMedianas(int[] fila, int i) {
-
-        int[] medianaOrdenada = new int[fila.length];
-        for (int k = 0; k < medianaOrdenada.length; k++) {
-            for (int j = 0; j < medianaOrdenada.length; j++) {
-                if (fila[j] > fila[k + 1]) {
-                    int aux = fila[i];
-
-                    medianaOrdenada[j] = aux;
-                    fila[i + 1] = aux;
-
-                    return ordenarMedianas(medianaOrdenada, i + 1);
-
-                }
-            }
-        }
-        return medianaOrdenada;
-
-    }
+public static void ordenarMedianas(ArrayList<Integer> fila, int n) {
+ 
+}
 
 }
