@@ -123,22 +123,22 @@ public class Lab1P2_GabrielMejia {
     }
 
     public static int[] ordenarMedianas(int[] fila, int i) {
-        int aux;
-        int menor;
-        int[] medianaOrdenada = new int[fila.length];
-        for (int j = 0; j < medianaOrdenada.length; j++) {
-            if (fila[i] > fila[i + 1]) {
-                menor = fila[i];
-                aux = fila[i + 1];
-                medianaOrdenada[i] = menor;
-                return ordenarMedianas(medianaOrdenada, i+1);
 
-            }else{
-               
+        int[] medianaOrdenada = new int[fila.length];
+        for (int k = 0; k < medianaOrdenada.length; k++) {
+            for (int j = 0; j < medianaOrdenada.length; j++) {
+                if (fila[j] > fila[k + 1]) {
+                    int aux = fila[i];
+
+                    medianaOrdenada[j] = aux;
+                    fila[i + 1] = aux;
+
+                    return ordenarMedianas(medianaOrdenada, i + 1);
+
+                }
             }
         }
         return medianaOrdenada;
-        
 
     }
 
